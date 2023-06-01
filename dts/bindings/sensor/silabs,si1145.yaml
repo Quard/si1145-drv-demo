@@ -1,0 +1,5 @@
+description: Si1145 driver
+
+compatible: "silabs,si1145"
+
+include: [i2c-device.yaml, sensor-device.yaml]

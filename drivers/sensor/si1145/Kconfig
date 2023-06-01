@@ -1,0 +1,7 @@
+config SI1145
+    bool "SiLabs Si1145"
+    default y
+    depends on DT_HAS_SILABS_SI1145_ENABLED
+    select I2C
+    help
+      Si1145 UV sensor

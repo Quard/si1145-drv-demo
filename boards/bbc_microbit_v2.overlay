@@ -1,0 +1,8 @@
+
+&i2c0 {
+    uvsens: si1145@60 {
+        compatible = "silabs,si1145";
+        status = "okay";
+        reg = < 0x60 >;
+    };
+};

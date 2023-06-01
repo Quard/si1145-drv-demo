@@ -1,0 +1,1 @@
+add_subdirectory_ifdef(CONFIG_SI1145  si1145)

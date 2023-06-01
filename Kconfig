@@ -1,0 +1,11 @@
+mainmenu "Si1145 Zephyr Driver Demo"
+
+menu "Si1145 Demo"
+rsource "drivers/Kconfig"
+endmenu
+
+source "Kconfig.zephyr"
+
+module = APPLICATION_MODULE
+module-str = Application module
+source "subsys/logging/Kconfig.template.log_config"
