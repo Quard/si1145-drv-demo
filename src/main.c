@@ -14,7 +14,8 @@
 void main(void) {
 	printk("Hello World! %s\n", CONFIG_BOARD);
 
-	const struct device *const dev = DEVICE_DT_GET_ANY(silabs_si1145);
+	// const struct device *const dev = DEVICE_DT_GET_ANY(silabs_si1145);
+	const struct device *const dev = DEVICE_DT_GET_ANY(i2c1);
 	__ASSERT(dev != NULL, "Failed to get device binding");
 	__ASSERT(device_is_ready(dev), "Device %s is not ready", dev->name);
 

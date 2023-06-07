@@ -1,8 +1,39 @@
 
-&i2c0 {
+// &i2c0 {
+//     uvsens: si1145@60 {
+//         compatible = "silabs,si1145";
+//         status = "okay";
+//         reg = < 0x60 >;
+//     };
+// };
+
+&i2c1 {
+    status = "okay";
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c1_default>;
+	pinctrl-1 = <&i2c1_sleep>;
+	pinctrl-names = "default", "sleep";
     uvsens: si1145@60 {
         compatible = "silabs,si1145";
         status = "okay";
         reg = < 0x60 >;
     };
+};
+
+&pinctrl {
+	i2c1_default: i2c1_default {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 19)>,
+				<NRF_PSEL(TWIM_SCL, 0, 20)>;
+		};
+	};
+
+	i2c1_sleep: i2c1_sleep {
+		group1 {
+			psels = <NRF_PSEL(TWIM_SDA, 0, 19)>,
+				<NRF_PSEL(TWIM_SCL, 0, 20)>;
+			low-power-enable;
+		};
+	};
+
 };
